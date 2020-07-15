@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=”http://www.thymeleaf.org”>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+   <li class="nav-item">
+    <a class="nav-link" href="/songform">Form</a>
+   </li>
+
+  </ul>
+ </div>
+</nav>
+<!--<a href="/songform">Home</a>-->
+<form action="#" th:action="@{/songform}" th:object="${song}" method="post">
+   Name: <input type="text" th:field="*{name}"   /><br  />
+    Artist: <input type="text" th:field="*{artist}"   /><br  />
+    Album: <input type="text" th:field="*{album}"   /><br  />
+    Year: <input type="number" th:field="*{year}"   /><br  />
+    Rating:<br> <input type="radio" id="rate1" value="1" th:field="*{rating}">
+    <label for = "rate1">1 Star</label>
+    <input type="radio" id="rate2" value="2" th:field="*{rating}">
+    <label for = "rate2">2 Star</label>
+    <input type="radio" id=rate3 value="3" th:field="*{rating}">
+    <label for = "rate3">3 Star</label>
+    <input type="radio" id=rate4 value="4" th:field="*{rating}">
+    <label for = "rate4">4 Star</label>
+    <input type="radio" id=rate5 value="5" th:field="*{rating}">
+    <label for = "rate5">5 Star</label>
+
+
+    <br>Genre: <br><input type="checkbox" id=genre value="Hip Hop" th:field="*{genre}"   >
+    <label for = "genre">Hip Hop</label><br>
+    <input type="checkbox" id=genre2 value="Hip Hop" th:field="*{genre}"   >
+    <label for = "genre2">Pop</label><br>
+    <input type="checkbox" id=genre3 value="Hip Hop" th:field="*{genre}"   >
+    <label for = "genre3">Jazz</label><br>
+    <input type="checkbox" id=genre4 value="Hip Hop" th:field="*{genre}"   >
+    <label for = "genre4">Rock</label><br>
+    <input type="checkbox" id=genre5 value="Hip Hop" th:field="*{genre}"   >
+    <label for = "genre5">Country</label><br>
+    <input type="checkbox" id=genre6 value="Hip Hop" th:field="*{genre}"   >
+    <label for = "genre6">Electric</label><br>
+
+    In Stock :
+    <input type="radio" id="inStock" value="true" th:field="*{inStock}">
+    <label for = "inStock">Yes</label>
+    <input type="radio" id=inStock2 value="false" th:field="*{inStock}">
+    <label for = "inStock2">No</label>
+    <br><input type="submit" value="Submit"  />
+</form>
+
+</body>
+</html>
